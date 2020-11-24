@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rih-listmateriel',
+  selector: 'app-listmateriel',
   templateUrl: './listmateriel.component.html',
   styleUrls: ['./listmateriel.component.css']
 })
