@@ -1,24 +1,33 @@
-<h2>Détail du "{{materiel.libelle}}" d'Id : {{materiel.id}}</h2>
-<ul>
-    <li>
-<img [src]="materiel.photo" alt="photo">
-    </li>
-    <li>
-        Marque : {{materiel.marque}}
-    </li>
-    <li>
-        Prix {{materiel.prix}}
-    </li>
-    <li>
-        Description {{materiel.description}}
-    </li>
-    <li>
-        Quantité : {{materiel.quantite}}
-    </li>
-    <li>
-        <input type="checkbox" [checked]="materiel.hautGamme"> Haut de Gamme
-    </li>
-    <li>
-        <button type="button" class="btn btn-primary">Afficher les commentaires</button>
-    </li>
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2>Détail du "{{materiel.libelle}}" d'Id : {{materiel.id}}</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+            <img [src]="materiel.photo" alt="photo">
+                </li>
+                <li class="list-group-item">
+                    Marque : {{materiel.marque}}
+                </li>
+                <li class="list-group-item">
+                    Prix {{materiel.prix}}
+                </li>
+                <li class="list-group-item">
+                    Description {{materiel.description}}
+                </li>
+                <li class="list-group-item">
+                    Quantité : {{materiel.quantite}}
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" [checked]="materiel.hautGamme"> Haut de Gamme
+                </li>
+                <li class="list-group-item">
+                    <button type="button" class="btn btn-primary">Afficher les commentaires</button>
+                </li>
+            </ul>
+            
+        </div>
+        <div class="col-6"></div>
+    </div>
+</div>
+
