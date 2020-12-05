@@ -8,6 +8,7 @@ import { Materiel } from 'src/app/models/materiel';
 })
 export class DetailmaterielComponent implements OnInit {
 
+  afficher:boolean =false;
   materiel:Materiel =  {   
     id: '2', 
     libelle: 'PC', 
@@ -17,9 +18,16 @@ export class DetailmaterielComponent implements OnInit {
     description: 'PC Portable très pratique', 
     hautGamme: false,
     quantite: 5,
-    commentaires:[ {contenu:' satisfaisant', note:3, auteur:'Sami MRAD', date:new Date(2020,11,4)},
-    {contenu:'Bon rapport qualité prix', note:4, auteur:'Samar Salah', date:new Date(2020,10,4)}]
+    commentaires:[ 
+      {contenu:' satisfaisant', note:3, auteur:'Sami MRAD', date:new Date(2020,11,4)},
+
+    {contenu:'Bon rapport qualité prix', note:4, auteur:'Samar Salah', date:new Date(2020,10,4)}
+  ]
 };
+/*
+onClick(){
+  this.afficher = !this.afficher;
+}*/
   constructor() { }
 
   ngOnInit(): void {
