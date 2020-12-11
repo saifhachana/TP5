@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Materiel } from 'src/app/models/materiel';
+import { MaterielService } from 'src/app/services/materiel.service';
 
 @Component({
   selector: 'app-detailmateriel',
@@ -7,30 +8,31 @@ import { Materiel } from 'src/app/models/materiel';
   styleUrls: ['./detailmateriel.component.css']
 })
 export class DetailmaterielComponent implements OnInit {
+  identifiant :string ="" ; 
+ 
+   
+   // showing:boolean = true; 
+    constructor(private materielServices : MaterielService) { }
+  /* onshow()
+    {
+      this.showing = !this.showing; 
+    }*/
+    onAfficher(id:string)
+    {
+      this.identifiant = id ; 
+      this.materiel = this.materielServices.getMaterielById(id) ; 
+      alert(this.materiel); 
+      return this.materiel ; 
 
-  afficher:boolean =false;
-  materiel:Materiel =  {   
-    id: '2', 
-    libelle: 'PC', 
-    photo:'assets/Images/Informatique/pcFixe.jpg',
-    marque: 'HP', 
-    prix: 1780.6, 
-    description: 'PC Portable très pratique', 
-    hautGamme: false,
-    quantite: 5,
-    commentaires:[ 
-      {contenu:' satisfaisant', note:3, auteur:'Sami MRAD', date:new Date(2020,11,4)},
-
-    {contenu:'Bon rapport qualité prix', note:4, auteur:'Samar Salah', date:new Date(2020,10,4)}
-  ]
-};
-/*
-onClick(){
-  this.afficher = !this.afficher;
-}*/
-  constructor() { }
-
+    }
+    showing:boolean = true; 
+    onshow()
+  {
+    this.showing = !this.showing; 
+  }   
+  materiel:Materiel ; 
   ngOnInit(): void {
+    this.materiel = this.materielServices.getMaterielById('2') ; 
   }
 
 }
